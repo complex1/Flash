@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="./flash/css/index.css">
+  <script src="./flash/neon.js" ></script>
+  <script src="./flash/rambow.js"></script>
+  <script src="./flash/button.js"></script>
+  <script src="./flash/3d.js"></script>
+  <script src="./flash/tourch.js"></script>
+</head>
+<body>
+  <div class="window window-1">
+    <p id="neonText">NEON TEXT</p>
+  </div>
+  <div class="window window-2">
+    <div id="neonBorder"></div>
+  </div>
+  <div class="window window-3">
+    <div id="rambowBorder">
+      <span>2222</span>
+    </div>
+  </div>
+  <div class="window window-4">
+    <button id="flash-btn" >Click Me</button>
+  </div>
+
+  <div class="window window-5">
+    <div id="rambowShadow" ></div>
+  </div>
+
+  <div class="window window-6">
+    <div id="flash-3d" >
+      <div>Lorem ipsum dolor s</div>
+    </div>
+  </div>
+
+  <div class="window window-7">
+    <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt voluptates sint quo esse similique. Suscipit ipsa expedita tempora nostrum praesentium id dolores accusamus magni quo dignissimos quis, cum molestiae consectetur?
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem ea quae aliquam natus repudiandae aut esse commodi, quia fugit facilis, ab nisi repellendus asperiores veniam, expedita obcaecati distinctio nesciunt quidem.
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem, magnam tempora nihil nobis, omnis consequuntur deserunt ex consectetur sit est et rerum reprehenderit, ab cumque odio quo architecto quod nisi!
+    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Doloremque harum voluptas molestiae error maxime explicabo facilis, temporibus consequuntur voluptate aut vel eius ratione? Ipsa a iusto eius, minima nobis hic.
+    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Laboriosam aut, earum dignissimos veniam placeat maxime, harum perspiciatis eligendi ullam labore odio ea repudiandae, omnis eveniet? Optio minus nam quisquam sapiente.</div>
+  </div>
+  <script>
+    const neonText = new NeonText(document.querySelector('#neonText'), {})
+    const neonBorder = new NeonBorder(document.querySelector('#neonBorder'), {})
+    const flashBtn = new FlashButton(document.querySelector('#flash-btn'), {})
+
+    const rambowBorder = new RambowBorder(document.querySelector('#rambowBorder'), {})
+    const rambowShadow = new RambowShadow(document.querySelector('#rambowShadow'), {})
+
+    const flash3DBox = new Flash3DBox(document.querySelector('#flash-3d'), {})
+
+    const flashTourch = new FlashTourch(document.querySelector('.window-7'), {})
+  </script>
+  <script>
+    // document.querySelector('.window-7').addEventListener('mousemove', (e) => {
+    //   e.stopPropagation()
+    //   const rect = document.querySelector('.window-7').getBoundingClientRect()
+    //   const x = e.clientX - rect.left;
+    //   const y = e.clientY - rect.top;
+    //   const r = 200
+    //   const tourch = document.querySelector('#flash-tourch')
+
+    //   tourch.style.height = `${r}px`
+    //   tourch.style.width = `${r}px`
+    //   tourch.style.left = `${x - r / 2}px`
+    //   tourch.style.top = `${y - r / 2}px`
+    // })
+  </script>
+</body>
+</html>
+      
