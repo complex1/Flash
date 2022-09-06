@@ -1,0 +1,51 @@
+.flash-btn {
+  font-size: var(--flash-btn-size);
+  padding: 0.45em 0.75em;
+  position: relative;
+  background-color: var(--flash-btn-background);
+  color: var(--flash-btn-color);
+  border: 1px solid var(--flash-btn-color);
+  border-radius: 0.25em;
+  box-shadow: 0 0 4px var(--flash-btn-color);
+
+}
+
+.flash-btn::before, .flash-btn::after {
+  position: absolute;
+  display: block;
+  content: '';
+  height: 0.2em;
+  width: 0.67em;
+  border: 1px solid var(--flash-btn-color);
+  background-color: var(--flash-btn-background);
+  backdrop-filter: blur(4px);
+  /* bac */
+  box-shadow: 0 0 4px var(--flash-btn-color);
+}
+
+.flash-btn::before {
+  top: 0em;
+  left: 0.3em;
+  transform: skew(-15deg) translateY(-50%);
+  transition: left 0.4s linear;
+}
+
+.flash-btn::after {
+  bottom: 0em;
+  right: 0.3em;
+  transform: skew(15deg) translateY(50%);
+  transition: right 0.4s linear;
+}
+
+.flash-btn:hover::before {
+  left: calc(100% - 0.6em - 0.33em);
+}
+
+.flash-btn:hover::after {
+  right: calc(100% - 0.6em - 0.33em);
+}
+
+
+.flash-btn:focus {
+  box-shadow: 0 0 8px var(--flash-btn-color), 0 0 12px rgba(255,255,255, 0.5);
+}

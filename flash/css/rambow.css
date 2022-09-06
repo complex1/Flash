@@ -1,0 +1,22 @@
+@keyframes rotate {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.rambow-shadow {
+  position: relative;
+  transform-style: preserve-3d;
+}
+
+.rambow-shadow::before {
+  position: absolute;
+  display: block;
+  content: '';
+  inset: 0 0 0 0;
+  background: var(--rambow-shadow-background);
+  transform: var(--rambow-shadow-transform);
+  filter: var(--rambow-shadow-filter);
+  z-index: -1;
+  /* opacity: var(--opacity); */
+}

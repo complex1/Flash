@@ -1,0 +1,10 @@
+
+:root {
+  --flash-btn-color: rgb(121, 249, 66);
+  --flash-btn-background: rgba(0,0,0,0);
+  --flash-btn-size: 60px;
+
+  --rambow-shadow-background: linear-gradient(#60efff,  pink, red, green);
+  --rambow-shadow-transform: translate3d(10px, 10px, -1px) scale(1);
+  --rambow-shadow-filter: blur(10px);
+}
