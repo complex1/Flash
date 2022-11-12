@@ -40,6 +40,22 @@
   </div>
 
   <div class="window window-7">
+    <div><div class="cube cube-1">
+      <div class="cube-insight-text" >FLASH UI</div>
+    </div></div>
+    <div><div class="cube cube-2" >
+      <div>FRONT</div>
+      <div>BACK</div>
+      <div>LEFT</div>
+      <div>RIGHT</div>
+      <div>TOP</div>
+      <div>BOTTOM</div>
+    </div></div>
+    <div><div class="cube cube-3"></div></div>
+    <div><div class="cube cube-4" ></div></div>
+  </div>
+
+  <div class="window window-8">
     <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt voluptates sint quo esse similique. Suscipit ipsa expedita tempora nostrum praesentium id dolores accusamus magni quo dignissimos quis, cum molestiae consectetur?
     Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem ea quae aliquam natus repudiandae aut esse commodi, quia fugit facilis, ab nisi repellendus asperiores veniam, expedita obcaecati distinctio nesciunt quidem.
     Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem, magnam tempora nihil nobis, omnis consequuntur deserunt ex consectetur sit est et rerum reprehenderit, ab cumque odio quo architecto quod nisi!
@@ -55,23 +71,53 @@
     const rambowShadow = new RambowShadow(document.querySelector('#rambowShadow'), {})
 
     const flash3DBox = new Flash3DBox(document.querySelector('#flash-3d'), {})
+    const cuboid1 = new Cuboid(document.querySelector('.cube-1'))
+    const cuboid2 = new Cuboid(document.querySelector('.cube-2'), {
+      faceContent: true,
+      face: [
+        {
+          backgroundColor: 'red',
+          border: '1px solid pink'
+        }
+      ]
+    })
+    const cuboid3 = new Cuboid(document.querySelector('.cube-3'), {
+      face: [
+        {
+          backgroundColor: 'red'
+        },
+        {
+          backgroundColor: 'green'
+        },
+        {
+          backgroundColor: 'blue'
+        }
+      ]
+    })
+    const cuboid4 = new Cuboid(document.querySelector('.cube-4'), {
+      face: [
+        {
+          backgroundColor: 'red'
+        },
+        {
+          backgroundColor: 'green'
+        },
+        {
+          backgroundColor: 'blue'
+        },
+        {
+          backgroundColor: 'pink'
+        },
+        {
+          backgroundColor: 'gray'
+        },
+        {
+          backgroundColor: 'orange'
+        }
+      ]
+    })
 
-    const flashTourch = new FlashTourch(document.querySelector('.window-7'), {})
-  </script>
-  <script>
-    // document.querySelector('.window-7').addEventListener('mousemove', (e) => {
-    //   e.stopPropagation()
-    //   const rect = document.querySelector('.window-7').getBoundingClientRect()
-    //   const x = e.clientX - rect.left;
-    //   const y = e.clientY - rect.top;
-    //   const r = 200
-    //   const tourch = document.querySelector('#flash-tourch')
-
-    //   tourch.style.height = `${r}px`
-    //   tourch.style.width = `${r}px`
-    //   tourch.style.left = `${x - r / 2}px`
-    //   tourch.style.top = `${y - r / 2}px`
-    // })
+    const flashTourch = new FlashTourch(document.querySelector('.window-8'), {})
   </script>
 </body>
 </html>
