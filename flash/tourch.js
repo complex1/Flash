@@ -19,6 +19,19 @@ const RenderFlashTourch = function (event) {
   this.tourch.style.boxShadow = `0 0 0 100000px ${this.config.color}, inset 0px 0px 12px rgba(0, 0, 0, 0.8)`
 }
 
+const ToggleFlashTourch = function () {
+  const flashDisplay = this.tourch.style.display
+  if (flashDisplay === 'none') {
+    this.ele.addEventListener('mousemove', this.RenderFlashTourch)
+    this.tourch.style.display = 'block'
+  } else {
+    this.ele.removeEventListener('mousemove', this.RenderFlash3DBox)
+    this.ele.removeEventListener('mouseleave', this.StopRenderFlash3DBox)
+    this.tourch.style.display = 'none'
+  }
+
+}
+
 class FlashTourch {
   constructor(ele, config) {
     this.id = UID('flash-3d')
@@ -28,12 +41,14 @@ class FlashTourch {
     this.config = { ...FLASH_TOURCH_CONFIG, config }
     this.tourch = document.createElement('div')
     this.tourch.setAttribute('class', 'flash-tourch')
+    this.tourch.style.display = 'none'
     this.ele.append(this.tourch)
     this.ele.style.position = 'relative'
     this.ele.style.overflow = 'hidden'
 
     this.RenderFlashTourch = RenderFlashTourch.bind(this)
-    this.ele.addEventListener('mousemove', this.RenderFlashTourch)
+    this.ToggleFlashTourch = ToggleFlashTourch.bind(this)
+    this.ele.addEventListener('click', this.ToggleFlashTourch)
   }
   setConfig(key, value) {
     this.config[key] = value
