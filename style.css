@@ -47,6 +47,20 @@ html, body {
 
 .window-7 {
   background-color: rgb(94, 207, 255);
+  display: grid;
+  grid-template-columns:  1fr 1fr;
+}
+
+.window > div {
+  height: 50vh;
+  width: 50vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.window-8 {
+  background-color: rgb(94, 255, 148);
 }
 
 #neonBorder, #rambowBorder, #rambowShadow, #flash-3d {
@@ -59,6 +73,62 @@ html, body {
   background-color: rgb(0, 105, 21);
 }
 
+.cube {
+  animation: move  6s infinite linear;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.cube div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.cube-1 {
+  animation-delay: 1s;
+  font-size: 40px;
+}
+
+.cube-2 {
+  animation-delay: 2s;
+  font-size: 20px;
+}
+
+.cube-3 {
+  animation-delay: 3s;
+}
+
+.cube-4 {
+  animation-delay: 4s;
+}
+
+.cube-insight-text {
+  transform: translateZ(-50px);
+}
+
+@keyframes move {
+  0% {
+    transform: rotate3d(1,1,0, 66deg)
+  }
+  20% {
+    transform: rotate3d(2,2,0, 0deg)
+  }
+  40% {
+    transform: rotate3d(1,2,4, 226deg)
+  }
+  60% {
+   transform: rotate3d(1,5,3, 6deg)
+  }
+  80% {
+    transform: rotate3d(2,1,0, 189deg)
+  }
+  100% {
+    transform: rotate3d(1,1,0, 66deg)
+  }
+
+}
+
 #flash-3d {
   background-color: aquamarine;
   display: flex;
@@ -67,3 +137,4 @@ html, body {
   padding: 10px;
   overflow: hidden;
 }
+
