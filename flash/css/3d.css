@@ -1,0 +1,83 @@
+
+.nD-cuboid {
+  height: var(--cuboid-height);
+  width: var(--cuboid-width);
+  position: relative;
+  transform-style: preserve-3d;
+}
+.nD-cuboid__child--front {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  z-index: 1;
+  background: var(--face-front-background);
+  border: var(--face-front-border);
+}
+
+.nD-cuboid__child--back {
+
+  height: 100%;
+  width: 100%;
+  transform: translateZ(var(--cuboid-depth-negative)) rotateY(180deg);
+  position: absolute;
+  top: 0;
+  z-index: 0;
+
+  
+  background: var(--face-back-background);
+  border: var(--face-back-border);
+}
+
+.nD-cuboid__child--left {
+
+  height: 100%;
+  width: var(--cuboid-depth);
+  position: absolute;
+  transform-origin: left;
+  top: 0;
+  left: 0;
+  transform: rotateY(-90deg) translateX(var(--cuboid-depth-negative));
+
+  background: var(--face-left-background);
+  border: var(--face-left-border);
+}
+
+.nD-cuboid__child--right {
+
+  height: 100%;
+  width: var(--cuboid-depth);
+  right: 0;
+  top: 0;
+  position: absolute;
+  transform-origin: right;
+  transform: rotateY(90deg) translateX(var(--cuboid-depth));
+
+  background: var(--face-right-background);
+  border: var(--face-right-border);
+}
+
+.nD-cuboid__child--top {
+
+  height: var(--cuboid-depth);
+  width: 100%;
+  position: absolute;
+  transform: rotateX(90deg) translateY(var(--cuboid-depth-negative));
+  transform-origin: top;
+  top: 0;
+
+  background: var(--face-top-background);
+  border: var(--face-top-border);
+}
+
+.nD-cuboid__child--bottom {
+  height:  var(--cuboid-depth);
+  width: 100%;
+  bottom: 0;
+  position: absolute;
+  transform: rotateX(270deg) translateY(var(--cuboid-depth));
+  transform-origin: bottom;
+
+  background: var(--face-bottom-background);
+  border: var(--face-bottom-border);
+}
