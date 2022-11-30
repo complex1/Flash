@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="./iframeCommunication/common.js"></script>
+  <script src="./iframeCommunication/parent.js"></script>
+</head>
+<body>
+  <h1>Parent</h1>
+  <button>Parent</button>
+  <iframe name="child" src="/Iframe/child.html" frameborder="0"></iframe>
+  <script>
+    const childIframe = new ChildIframe('child')
+    const button = document.querySelector('button')
+    childIframe.addEvent('btn-click', (data, callback) => {
+      console.log('PARENT', 'Recive event', data)
+      callback('Send From parent')
+    })
+    button.addEventListener('click', () => {
+      childIframe.pushEvent('btn-click', 'Send From Parent' ,(data) => {
+        console.log('PARENT', 'Recive callbackEvent event', data)
+      })
+    })
+  </script>
+</body>
+</html>
